@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The 60-Minute Automation Stack — Nigeria's #1 plug-and-play business automation system. No coding. No maintenance. Launch your Automation Stack today." />
+  <title>60-Minute Automation Stack | Neyo Digitals</title>
+
+  <!-- Favicon: gold lightning bolt on dark background -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080A0F'/%3E%3Crect width='64' height='64' rx='14' fill='none' stroke='%23E8C97A' stroke-width='2' opacity='0.4'/%3E%3Cpolygon points='38,6 20,36 30,36 26,58 44,28 34,28' fill='%23E8C97A'/%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080A0F'/%3E%3Cpolygon points='38,6 20,36 30,36 26,58 44,28 34,28' fill='%23E8C97A'/%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --gold: #E8C97A;
+      --gold-dim: #b89a4a;
+      --gold-glow: rgba(232, 201, 122, 0.25);
+      --bg: #080A0F;
+      --bg2: #0D1018;
+      --bg3: #121620;
+      --surface: #161C28;
+      --surface2: #1E2535;
+      --text: #EEF0F5;
+      --muted: #7A8299;
+      --border: rgba(232, 201, 122, 0.18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 24px 120px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(160deg, rgba(8,10,15,0.88) 0%, rgba(8,10,15,0.72) 50%, rgba(8,10,15,0.95) 100%),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    /* Animated gold grid */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(232,201,122,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,201,122,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      z-index: 1;
+      animation: gridPulse 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes gridPulse {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 860px; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,201,122,0.10);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: fadeDown 0.7s ease both;
+    }
+
+    .badge i { font-size: 0.65rem; }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 10vw, 7.5rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      animation: fadeDown 0.8s 0.1s ease both;
+    }
+
+    .hero h1 .accent {
+      color: var(--gold);
+      display: block;
+      text-shadow: 0 0 60px rgba(232,201,122,0.4);
+    }
+
+    .hero-sub {
+      margin: 24px auto 0;
+      max-width: 600px;
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: var(--muted);
+      font-weight: 400;
+      animation: fadeDown 0.9s 0.2s ease both;
+    }
+
+    .hero-cta {
+      margin-top: 44px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeDown 1s 0.3s ease both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: #080A0F;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 16px 36px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 0 40px rgba(232,201,122,0.35);
+    }
+
+    .btn-primary:hover {
+      background: #f5d98a;
+      box-shadow: 0 0 60px rgba(232,201,122,0.55);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--gold);
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 15px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      transition: all 0.25s;
+    }
+
+    .btn-ghost:hover { border-color: var(--gold); background: var(--gold-glow); }
+
+    .hero-stats {
+      margin-top: 60px;
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 1s 0.5s ease both;
+    }
+
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      overflow: hidden;
+    }
+
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .trust-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .trust-divider { width: 1px; height: 24px; background: var(--border); flex-shrink: 0; }
+
+    .trust-badges {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      filter: grayscale(1);
+      opacity: 0.65;
+      transition: all 0.3s;
+    }
+
+    .trust-badge:hover { filter: grayscale(0); opacity: 1; color: var(--gold); }
+
+    .verified-icon {
+      width: 20px;
+      height: 20px;
+      background: #1877f2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .verified-icon i { color: #fff; font-size: 0.6rem; }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 90px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--gold);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1;
+      color: var(--text);
+    }
+
+    .section-title span { color: var(--gold); }
+
+    .section-sub {
+      margin-top: 14px;
+      color: var(--muted);
+      max-width: 560px;
+      font-size: 1rem;
+    }
+
+    /* ── FEATURES ── */
+    .features { background: var(--bg2); }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2px;
+      margin-top: 56px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      padding: 36px 32px;
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gold-glow) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .feature-card:hover::before { opacity: 1; }
+    .feature-card:hover { background: var(--surface2); }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--gold-glow);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .feature-icon i { color: var(--gold); font-size: 1.3rem; }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .feature-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── HOW IT WORKS ── */
+    .how { background: var(--bg); }
+
+    .steps {
+      margin-top: 56px;
+      display: grid;
+      gap: 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 28px;
+      align-items: start;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--border);
+      line-height: 1;
+      padding-top: 4px;
+      transition: all 0.3s;
+    }
+
+    .step:hover .step-num {
+      -webkit-text-stroke: 1px var(--gold);
+      color: var(--gold-glow);
+    }
+
+    .step-body h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .step-body p { font-size: 0.92rem; color: var(--muted); max-width: 520px; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--bg2); }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 56px;
+    }
+
+    .testi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .testi-card:hover { transform: translateY(-4px); border-color: var(--gold-dim); }
+
+    .testi-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 14px; letter-spacing: 2px; }
+
+    .testi-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+
+    .testi-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .testi-name { font-weight: 700; font-size: 0.9rem; }
+    .testi-role { font-size: 0.78rem; color: var(--muted); }
+
+    .testi-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      color: #1877f2;
+      margin-top: 4px;
+    }
+
+    /* ── CTA BLOCK ── */
+    .cta-block {
+      background: var(--bg);
+      text-align: center;
+      padding: 100px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-block::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .cta-block .section-title { font-size: clamp(2.5rem, 8vw, 5.5rem); margin-bottom: 20px; }
+    .cta-block .section-sub { margin: 0 auto 40px; }
+
+    .price-tag {
+      display: inline-block;
+      background: var(--gold-glow);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 32px;
+      margin-bottom: 36px;
+    }
+
+    .price-main {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .price-note { font-size: 0.78rem; color: var(--muted); margin-top: 4px; letter-spacing: 0.06em; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .footer-by { font-size: 0.82rem; color: var(--muted); margin-bottom: 20px; }
+
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 24px; flex-wrap: wrap; }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy { font-size: 0.75rem; color: #3a404f; }
+
+    /* ── STICKY CTA ── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      padding: 14px 20px;
+      background: linear-gradient(to top, rgba(8,10,15,0.98), rgba(8,10,15,0.85));
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .sticky-cta-text {
+      font-size: 0.82rem;
+      color: var(--muted);
+      flex: 1;
+      min-width: 0;
+    }
+
+    .sticky-cta-text strong { color: var(--text); display: block; font-size: 0.9rem; }
+
+    .sticky-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: #080A0F;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      box-shadow: 0 0 30px rgba(232,201,122,0.4);
+    }
+
+    /* ── VISUAL SHOWCASE ── */
+    .showcase { background: var(--bg); padding: 0 24px 90px; }
+
+    .showcase-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-rows: 260px 260px;
+      gap: 12px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .showcase-img {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .showcase-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+      display: block;
+    }
+
+    .showcase-img:hover img { transform: scale(1.07); }
+
+    .showcase-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, transparent 40%, rgba(8,10,15,0.65));
+      pointer-events: none;
+    }
+
+    .showcase-img:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .showcase-caption {
+      position: absolute;
+      bottom: 14px;
+      left: 16px;
+      z-index: 2;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    /* ── VISUAL STRIP (between How it works & Testimonials) ── */
+    .img-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .img-strip-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img-strip-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(0.3) brightness(0.7);
+      transition: filter 0.4s, transform 0.5s;
+      display: block;
+    }
+
+    .img-strip-item:hover img { filter: grayscale(0) brightness(0.85); transform: scale(1.05); }
+
+    .img-strip-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(8,10,15,0.8));
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .img-strip-overlay {
+      position: absolute;
+      bottom: 16px;
+      left: 20px;
+      z-index: 2;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+
+    /* How it works: layout split with image */
+    .how-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .how-visual {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 60px rgba(232,201,122,0.08);
+    }
+
+    .how-visual img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .how-visual-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(8,10,15,0.88);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .how-visual-badge .hv-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .how-visual-badge .hv-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .how-inner { grid-template-columns: 1fr; }
+      .how-visual { display: none; }
+      .showcase-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px;
+      }
+      .showcase-img:first-child { grid-row: auto; }
+      .img-strip { grid-template-columns: 1fr 1fr; }
+      .img-strip-item:last-child { display: none; }
+    }
+
+    @media (max-width: 540px) {
+      .showcase-grid { grid-template-columns: 1fr; grid-template-rows: repeat(3, 200px); }
+      .showcase-img:first-child { grid-row: auto; }
+      .img-strip { grid-template-columns: 1fr; height: auto; }
+      .img-strip-item { height: 180px; }
+      .img-strip-item:not(:first-child) { display: none; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .step { grid-template-columns: 60px 1fr; gap: 16px; }
+      .step-num { font-size: 2.5rem; }
+      .hero-stats { gap: 24px; }
+      .trust-divider { display: none; }
+      .sticky-cta { display: flex; }
+      .sticky-cta-text { display: none; }
+    }
+
+    @media (min-width: 641px) {
+      .sticky-cta { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="badge">
+      <i class="fa-solid fa-bolt"></i>
+      Nigeria's #1 Business Automation System
+    </div>
+
+    <h1>
+      Launch Your Entire
+      <span class="accent">Automation Stack</span>
+      In 60 Minutes.
+    </h1>
+
+    <p class="hero-sub">
+      No coding. No hiring. No maintenance headaches. One plug-and-play system that runs your business on autopilot — from payment to delivery.
+    </p>
+
+    <div class="hero-cta">
+      <a href="https://payhip.com/b/ORkqt" target="_blank" rel="noopener" class="btn-primary">
+        <i class="fa-solid fa-rocket"></i>
+        Get Instant Access
+      </a>
+      <a href="#how-it-works" class="btn-ghost">
+        <i class="fa-solid fa-play"></i>
+        See How It Works
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">60</div>
+        <div class="stat-label">Min Setup</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Lines of Code</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Auto-Running</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">₦0</div>
+        <div class="stat-label">Monthly Fee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TRUST BAR ═══════════════ -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span class="trust-label">Trusted & Verified By</span>
+    <div class="trust-divider"></div>
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <div class="verified-icon"><i class="fa-solid fa-check"></i></div>
+        Facebook Verified
+      </div>
+      <div class="trust-badge">
+        <i class="fa-brands fa-google" style="color:#4285F4;font-size:1rem"></i>
+        Google Indexed
+      </div>
+      <div class="trust-badge">
+        <i class="fa-brands fa-github" style="font-size:1rem"></i>
+        GitHub Hosted
+      </div>
+      <div class="trust-badge">
+        <i class="fa-solid fa-shield-halved" style="color:#22c55e;font-size:1rem"></i>
+        SSL Secured
+      </div>
+      <div class="trust-badge">
+        <i class="fa-solid fa-star" style="color:#E8C97A;font-size:0.9rem"></i>
+        Payhip Certified
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ VISUAL SHOWCASE ═══════════════ -->
+<div class="showcase">
+  <div class="showcase-grid">
+    <!-- Large left: dark gold tech -->
+    <div class="showcase-img">
+      <img
+        src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=900&q=85"
+        alt="Abstract dark gold technology"
+        loading="lazy"
+      />
+      <span class="showcase-caption">// Automation Infrastructure</span>
+    </div>
+    <!-- Top right: server room -->
+    <div class="showcase-img">
+      <img
+        src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80"
+        alt="Server room data center"
+        loading="lazy"
+      />
+      <span class="showcase-caption">// Always On</span>
+    </div>
+    <!-- Top far right: trading dashboard -->
+    <div class="showcase-img">
+      <img
+        src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80"
+        alt="Trading dashboard analytics"
+        loading="lazy"
+      />
+      <span class="showcase-caption">// Real-Time Data</span>
+    </div>
+    <!-- Bottom right: mobile entrepreneur -->
+    <div class="showcase-img">
+      <img
+        src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80"
+        alt="Entrepreneur working on laptop"
+        loading="lazy"
+      />
+      <span class="showcase-caption">// Work Anywhere</span>
+    </div>
+    <!-- Bottom far right: circuit/cyberpunk -->
+    <div class="showcase-img">
+      <img
+        src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=80"
+        alt="Cyberpunk circuit technology"
+        loading="lazy"
+      />
+      <span class="showcase-caption">// Plug &amp; Play</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ FEATURES ═══════════════ -->
+<section class="features">
+  <div class="container">
+    <div class="section-tag">// What You Get</div>
+    <h2 class="section-title">Built For <span>Nigerian</span> Entrepreneurs</h2>
+    <p class="section-sub">Every tool you need to look professional, collect money, and deliver value — automatically.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+        <h3>Instant Setup</h3>
+        <p>From zero to fully operational in 60 minutes flat. Follow the step-by-step guide and your automation runs itself.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-gear"></i></div>
+        <h3>Zero Maintenance</h3>
+        <p>Set it once, forget it. The stack is self-maintaining — no developers, no monthly retainers, no technical debt.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+        <h3>Mobile-Ready</h3>
+        <p>Your clients use their phones. Your stack is optimised for mobile-first delivery, collection, and communication.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-naira-sign"></i></div>
+        <h3>Naira-Native Payments</h3>
+        <p>Integrated with Nigerian payment systems. Get paid in Naira without fighting with foreign payment gateways.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+<section class="how" id="how-it-works">
+  <div class="container">
+    <div class="section-tag">// The Process</div>
+    <h2 class="section-title">3 Steps to <span>Full Automation</span></h2>
+    <p class="section-sub">No guesswork. Every step is documented, templated, and proven to work.</p>
+
+    <div class="how-inner" style="margin-top:56px">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h3>Purchase & Download</h3>
+            <p>Get instant access to the full Automation Stack via Payhip. Everything is packaged and ready to deploy the moment you check out.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h3>Follow the 60-Minute Blueprint</h3>
+            <p>The step-by-step guide walks you through every configuration. No experience required — if you can follow instructions, you can launch this.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h3>Go Live & Get Paid</h3>
+            <p>Your stack runs 24/7. Leads come in, payments go through, and clients get served — while you focus on growing your business.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side visual -->
+      <div class="how-visual">
+        <img
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=85"
+          alt="Professional working on automation"
+          loading="lazy"
+        />
+        <div class="how-visual-badge">
+          <div class="hv-num">60</div>
+          <div class="hv-label">Minutes to launch</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ IMAGE STRIP ═══════════════ -->
+<div class="img-strip">
+  <div class="img-strip-item">
+    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Business analytics dashboard" loading="lazy" />
+    <div class="img-strip-overlay">Analytics & Insights</div>
+  </div>
+  <div class="img-strip-item">
+    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=700&q=80" alt="Entrepreneur with laptop" loading="lazy" />
+    <div class="img-strip-overlay">Work From Anywhere</div>
+  </div>
+  <div class="img-strip-item">
+    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=80" alt="Digital payment success" loading="lazy" />
+    <div class="img-strip-overlay">Instant Payments</div>
+  </div>
+</div>
+
+<!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-tag">// Real Results</div>
+    <h2 class="section-title">What <span>Clients</span> Are Saying</h2>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"I had zero technical experience. Within one hour my entire funnel was running. Collected my first payment before the day ended."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AO</div>
+          <div>
+            <div class="testi-name">Adaeze O.</div>
+            <div class="testi-role">Online Vendor, Lagos</div>
+            <div class="testi-verified"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"The stack paid for itself in 3 days. My clients think I have a full development team. It's just me and this system."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">EB</div>
+          <div>
+            <div class="testi-name">Emeka B.</div>
+            <div class="testi-role">Digital Marketer, Abuja</div>
+            <div class="testi-verified"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Neyo Digitals delivered exactly what was promised. Professional setup, fast load, Google indexed the same day. 10/10."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">FK</div>
+          <div>
+            <div class="testi-name">Fatima K.</div>
+            <div class="testi-role">Freelancer, Kano</div>
+            <div class="testi-verified"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA BLOCK ═══════════════ -->
+<section class="cta-block">
+  <div class="container">
+    <div class="section-tag">// Limited Access</div>
+    <h2 class="section-title">Ready to <span>Automate?</span></h2>
+    <p class="section-sub">Join hundreds of Nigerian entrepreneurs who are running their business on autopilot right now.</p>
+
+    <div class="price-tag">
+      <div class="price-main">One-Time Payment</div>
+      <div class="price-note">Full access · No subscriptions · No hidden fees</div>
+    </div>
+
+    <div><br/>
+      <a href="https://payhip.com/b/ORkqt" target="_blank" rel="noopener" class="btn-primary" style="font-size:1.05rem;padding:18px 48px">
+        <i class="fa-solid fa-lock-open"></i>
+        Get Instant Access Now
+      </a>
+    </div>
+
+    <p style="margin-top:20px;font-size:0.8rem;color:var(--muted);">
+      <i class="fa-solid fa-shield-halved" style="color:var(--gold)"></i>&nbsp;
+      Secure checkout via Payhip · Instant delivery
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-logo">Neyo Digitals</div>
+  <div class="footer-by">Developed by Neyo Digitals — Nigeria's Digital Growth Partner</div>
+  <div class="footer-links">
+    <a href="https://payhip.com/b/ORkqt" target="_blank" rel="noopener">Get Access</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="mailto:neyodigitals@gmail.com">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Neyo Digitals. All rights reserved.</div>
+</footer>
+
+<!-- ═══════════════ STICKY CTA ═══════════════ -->
+<div class="sticky-cta">
+  <div class="sticky-cta-text">
+    <strong>60-Minute Automation Stack</strong>
+    Launch your business today
+  </div>
+  <a href="https://payhip.com/b/ORkqt" target="_blank" rel="noopener">
+    <i class="fa-solid fa-bolt"></i> Buy Now
+  </a>
+</div>
+
+<script>
+  // Show sticky CTA after scrolling past hero
+  const stickyCta = document.querySelector('.sticky-cta');
+  window.addEventListener('scroll', () => {
+    stickyCta.style.display = window.scrollY > 600 ? 'flex' : 'none';
+  }, { passive: true });
+</script>
+
+</body>
+</html>
